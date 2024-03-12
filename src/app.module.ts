@@ -1,11 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ItemService } from './item/item.service';
+import { ItemsModule } from './items/items.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import mongooseConfig from './config/mongoose.config';
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRootAsync({
+      useFactory: () => mongooseConfig,
+    }),
+    ItemsModule,
+  ],
   controllers: [AppController],
-  providers: [AppService, ItemService],
+  providers: [AppService],
 })
 export class AppModule {}

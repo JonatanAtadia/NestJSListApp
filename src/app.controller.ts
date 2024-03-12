@@ -1,14 +1,12 @@
-import { Controller, Get, Render } from '@nestjs/common';
-import { ItemService } from './item/item.service';
+import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly itemService: ItemService) {}
+  constructor(private readonly appService: AppService) {}
 
   @Get()
-  @Render('index')
-  async getItems() {
-    const items = await this.itemService.findAll();
-    return { items };
+  getHello(): string {
+    return this.appService.getHello();
   }
 }

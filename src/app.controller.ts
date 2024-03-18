@@ -11,4 +11,11 @@ export class AppController {
     const items = await this.itemsService.findAll();
     return { items };
   }
+
+  @Get('/hola')
+  @Render('hola')
+  async hola() {
+    const items = await this.itemsService.findAll();
+    return { items };
+  }
 }

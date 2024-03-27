@@ -1,16 +1,19 @@
-footer, nav {
-  background-color: pink;
+@import './variables.scss';
+@import './footer.scss';
+
+@mixin bg-color($color) {
+  background-color: $color;
 }
-footer p, nav p {
-  background-color: yellow;
-  height: 100px;
+
+nav {
+  @extend footer;
 }
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: orange;
+  background-color: $primary-color;
 }
 
 .container {
@@ -20,7 +23,7 @@ body {
 }
 
 h1 {
-  background-color: aqua;
+  @include bg-color(aqua);
   text-align: center;
   color: #333;
 }
@@ -40,4 +43,4 @@ li {
 
 li:hover {
   background-color: #f0f0f0;
-}/*# sourceMappingURL=styles.css.map */
+}

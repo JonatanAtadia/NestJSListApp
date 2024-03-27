@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NestJS List App</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-   
-</head>
-
-<body>
     <div class="container">
-        <h1>Listado de items hola: </h1>
+        <h1>Listado de items hola people: </h1>
         <ul>
             {{#each items}}
             <li>{{name}} - {{description}}</li>
             {{/each}}
         </ul>
     </div>
-</body>
 
-</html>
+    {{> footer}} <!-- Incluye el partial footer.hbs aquí -->

@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // Establecer el directorio base de las vistas
-  app.setBaseViewsDir(join(__dirname, '..', 'views'));
+  app.setBaseViewsDir(join(__dirname, '..', 'views/pages'));
 
   // Configurar Handlebars como motor de vistas
   const hbs = exphbs.create({
@@ -18,7 +18,7 @@ async function bootstrap() {
     // Directorio para los archivos de diseño (layouts)
     layoutsDir: join(__dirname, '..', 'views', 'layouts'),
     // Directorio para los archivos parciales
-    partialsDir: join(__dirname, '..', 'views', 'partials'),
+    partialsDir: join(__dirname, '..', 'views', 'components'),
   });
 
   // Configurar el motor de plantillas para renderizar archivos con extensión .hbs

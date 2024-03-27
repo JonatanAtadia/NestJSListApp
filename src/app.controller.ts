@@ -9,13 +9,15 @@ export class AppController {
   @Render('index')
   async root() {
     const items = await this.itemsService.findAll();
-    return { items };
+    const itemsArray = items.map((item) => item.toObject());
+    return { items: itemsArray };
   }
 
   @Get('/hola')
   @Render('hola')
   async hola() {
     const items = await this.itemsService.findAll();
-    return { items };
+    const itemsArray = items.map((item) => item.toObject());
+    return { items: itemsArray };
   }
 }
